@@ -2,7 +2,11 @@
 # -*- coding: utf-8 -*-
 """
 Downloads the free ebooks offered by O'Reilly. They can be downloaded by
-categories in different formats."""
+categories in different formats.
+
+Author: Alberto Martinez de Murga (@threkk)
+License: MIT
+"""
 
 from __future__ import print_function
 from __future__ import unicode_literals
@@ -11,8 +15,11 @@ from __future__ import absolute_import
 import argparse
 import re
 import sys
-
+# https://www.reddit.com/r/Python/comments/56syaa/7_oreilly_python_books_for_free/
+# https://github.com/travis-ci/travis-ci/issues/3747
+# http://docopt.org/
 from urllib.request import urlopen
+from urllib.request import urlretrieve
 from urllib.error import URLError
 
 CATEGORIES = ['programming', 'business', 'data', 'iot', 'security',
@@ -56,6 +63,34 @@ def download_book(book_url, epub, mobi, pdf):
         print('Please, specify at least one format to download the books.')
         sys.exit()
 
+    book_url = book_url.replace('/free/', '/free/files/')
+    if epub:
+        epub_url = book_url.replace('.csp', '.epub')
+        local_epub = epub_url.split('/')[-1]
+        try:
+            urlretrieve(epub_url, local_epub)
+            print('[·] Downloaded {name}'.format(name=local_epub))
+        except URLError:
+            print('[x] Error downloading {name}'.format(name=local_epub))
+
+    if mobi:
+        mobi_url = book_url.replace('.csp', '.mobi')
+        local_mobi = mobi_url.split('/')[-1]
+        try:
+            urlretrieve(mobi_url, local_mobi)
+            print('[·] Downloaded {name}'.format(name=local_mobi))
+        except URLError:
+            print('[x] Error downloading {name}'.format(name=local_mobi))
+
+    if pdf:
+        pdf_url = book_url.replace('.csp', '.pdf')
+        local_pdf = pdf_url.split('/')[-1]
+        try:
+            urlretrieve(pdf_url, local_pdf)
+            print('[·] Downloaded {name}'.format(name=local_pdf))
+        except URLError:
+            print('[x] Error downloading {name}'.format(name=local_pdf))
+
 
 if __name__ == '__main__':
     PARSER = argparse.ArgumentParser(description=r'Downloads the free ebooks '
@@ -81,4 +116,10 @@ if __name__ == '__main__':
     PARSER.add_argument('-v', '--version', action='version', version='1.0')
 
     ARGS = PARSER.parse_args()
-    scrape_site(ARGS.category[0])
+
+    for category in ARGS.category:
+        print('==> Retrieving {category} books'.format(category=category))
+        book_urls = scrape_site(category)
+
+        for book_url in book_urls:
+            download_book(book_url, ARGS.epub, ARGS.mobi, ARGS.pdf)
