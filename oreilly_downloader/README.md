@@ -1,16 +1,23 @@
 # O'Reilly downloader
 
-> Downloads the free ebooks offered by O'Reilly. They can be downloaded by categories in different formats.
+> Downloads the free ebooks offered by O'Reilly. They can be downloaded by 
+categories in different formats.
 
 # Installation
-Download the script. It requires `python`. Version `3.x` is advised although it should work on version `2.7.x` too. You can execute using:
-```
-$ ./oreally_downlader
+Download the script. It requires `python`. Version `3.x` is advised although it 
+should work on version `2.7.x` too. You can execute using:
 
+After downloading it, you need to give it execution permissions:
 ```
-You can also add it to your `$PATH` to execute using: 
+$ chmod +x oreilly_downloader
 ```
-$ oreally_downloader
+
+After that, you can execute using:
+```
+$ ./oreilly_downloader
+
+# If it is in your PATH
+$ oreilly_downloader
 ```
 
 # Usage
@@ -33,7 +40,7 @@ optional arguments:
   -v, --version  show program's version number and exit
 ```
 
-# Author
+# Meta
 - **Author:** Alberto Martinez de Murga ([@threkk](https://threkk.com))   
 - **License:** BSD-3. See `LICENSE` for more information.
 - **Repository:** https://github.com/threkk/scripts/oreilly_downloader

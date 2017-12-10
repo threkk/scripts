@@ -1,5 +1,5 @@
-# Maze
-> Generates a random maze in the terminal screen.
+# Shrug
+> ¯\\\_(ツ)\_/¯
 
 # Installation
 Download the script. It requires `python`. Version `3.x` is advised although it 
@@ -7,29 +7,29 @@ should work on version `2.7.x` too.
 
 After downloading it, you need to give it execution permissions:
 ```
-$ chmod +x maze
+$ chmod +x shrug
 ```
 
 After that, you can execute using:
 ```
-$ ./maze
+$ ./shrug
 
 # If it is in your PATH
-$ maze
+$ shrug
 ```
-
 # Usage
 ```
-usage: maze.py [-h] [-v]
+usage: shrug [-h] [-v] [-u]
 
-Generates a random isomorphic maze until it gets a termination signal (Ctrl +C).
+¯\_(ツ)_/¯
 
 optional arguments:
   -h, --help     show this help message and exit
   -v, --version  show program's version number and exit
+  -u, --unicode  Uses unicode emoji.
 ```
 
 # Meta
 - **Author:** Alberto Martinez de Murga ([@threkk](https://threkk.com))
 - **License:** BSD-3. See `LICENSE` for more information.
-- **Repository:** https://github.com/threkk/scripts/maze
+- **Repository:** https://github.com/threkk/scripts/shrug

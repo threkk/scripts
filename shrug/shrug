@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+¯\_(ツ)_/¯
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
+
+from argparse import ArgumentParser
+
+ASCII = '¯\_(ツ)_/¯'
+UNICODE = '🤷'
+
+if __name__ == '__main__':
+    PARSER = ArgumentParser(description=__doc__)
+    PARSER.add_argument('-v', '--version', action='version', version='1.0')
+    PARSER.add_argument('-u', '--unicode', action='store_true',
+                        help='Uses unicode emoji.')
+
+    ARGS = PARSER.parse_args()
+
+    if ARGS.unicode:
+        print(UNICODE)
+    else:
+        print(ASCII)
