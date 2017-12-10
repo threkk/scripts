@@ -1,13 +1,21 @@
 # O'Reilly downloader
 
-Downloads the free ebooks offered by O'Reilly. They can be downloaded by
-categories in different formats.
+> Downloads the free ebooks offered by O'Reilly. They can be downloaded by categories in different formats.
 
-**Author:** Alberto Martinez de Murga ([@threkk](https://threkk.com))   
-**License:** MIT
+# Installation
+Download the script. It requires `python`. Version `3.x` is advised although it should work on version `2.7.x` too. You can execute using:
+```
+$ ./oreally_downlader
 
 ```
-usage: oreilly_downloader.py [-h] [-e] [-m] [-p] [-v]
+You can also add it to your `$PATH` to execute using: 
+```
+$ oreally_downloader
+```
+
+# Usage
+```
+usage: oreilly_downloader [-h] [-e] [-m] [-p] [-v]
                              [<category> [<category> ...]]
 
 Downloads the free ebooks offered by OReilly. They can be downloaded by
@@ -23,4 +31,9 @@ optional arguments:
   -m, --mobi     download the book in Mobi format.
   -p, --pdf      download the book in PDF format.
   -v, --version  show program's version number and exit
-  ```
+```
+
+# Author
+- **Author:** Alberto Martinez de Murga ([@threkk](https://threkk.com))   
+- **License:** MIT. See `LICENSE` for more information.
+- **Repository:** https://github.com/threkk/scripts
