@@ -35,5 +35,5 @@ optional arguments:
 
 # Author
 - **Author:** Alberto Martinez de Murga ([@threkk](https://threkk.com))   
-- **License:** MIT. See `LICENSE` for more information.
-- **Repository:** https://github.com/threkk/scripts
+- **License:** BSD-3. See `LICENSE` for more information.
+- **Repository:** https://github.com/threkk/scripts/oreilly_downloader
